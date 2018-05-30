@@ -1,0 +1,95 @@
+//1.导入module
+import React, {Component} from 'react';
+import url from '../../images/limitTimeSelling.gif';
+import Clock from '../clock/Clock'
+
+//2.引入css
+//方式1 - 外联
+//好处:将js和css分离开来,使用到该css时再导入,减少了js端的代码量，
+//坏处:这种方式在react中容易造成全局污染，如当B组件内嵌到A组件中，
+// A组件CSS直接包含有B组件的样式名，此时B样式失效A样式起作用
+import loginCss from './Login.css'
+
+//方式2 - CSS in JS
+// 好处：代码只发生在内部，不会对外部的样式造成污染,同一个页面可以复用
+// 坏处: js和css全写在一个地方,增加单页面的代码复杂量
+const myColor = {
+    "color" : "grey"
+}
+const display = {
+    "display" : "none"
+}
+
+//2.定义常量、变量
+const linkImage = <img src={url} alt=""></img>
+const user = {"username":"Blank","password":"123456"}
+function print(user) {
+    return user?`username=${user.username};password=${user.password}`:`data error`
+}
+const h =  <div>
+  <h1> {print(user)}</h1>
+</div>
+
+function yourClick(){
+    console.log("有用吗")
+    document.getElementById("dis").style.display='inline'
+}
+
+function Hello(props) {
+     return  <div>
+         <h1>{props.username}</h1>
+         <h2>{props.password}</h2>
+     </div>
+}
+{/*<Clock/>相当于自己自定义一个类似于input标签(react规定这种自定义标签必须大写)*/}
+const hello = <div>
+    <Hello className={loginCss.h1} username={user.username} password={user.password}/>
+    <Clock/>
+    <button onClick={yourClick}>点击一下</button>
+    <div style={display} id="dis">出来了</div>
+</div>
+
+function UserLogin(props) {
+    return <h1>登入</h1>
+}
+function LoginButton(props) {
+    return <input type="button" value="登入" onClick={props.onClick}/>
+}
+function UserLogout(props) {
+    return <h1>登出</h1>
+}
+function LogoutButton(props) {
+    return <input type="button" value="登出" onClick={props.onClick}/>
+}
+
+function CurrentLoginStatus(props) {
+    console.log(props.state)
+    return props.state?(<UserLogout/>):(<UserLogin/>);
+}
+
+class Login extends Component {
+    constructor(props){
+        super(props);
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.state = {isLoggedIn: false};
+    }
+    handleLoginClick() {
+        this.setState({isLoggedIn: true});
+    }
+
+    handleLogoutClick() {
+        this.setState({isLoggedIn: false});
+    }
+    render() {
+        const isLogin = this.state.isLoggedIn
+        const btn = isLogin?<LogoutButton onClick={this.handleLogoutClick}/>:<LoginButton onClick={this.handleLoginClick}/>;
+        return (
+            <div>
+            <CurrentLoginStatus state={isLogin} />
+        {btn}
+            </div>
+        );
+    }
+}
+export default Login;
