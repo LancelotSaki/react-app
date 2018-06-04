@@ -1,0 +1,29 @@
+{
+  "city": [
+    {
+      "cityId": "101000",
+      "cityName": "北京市"
+    },
+    {
+      "cityId": "321000",
+      "cityName": "南京市"
+    },
+    {
+      "cityId": "451000",
+      "cityName": "南宁市"
+    },
+    {
+      "cityId": "330000",
+      "cityName": "温州市"
+    },
+    {
+      "cityId": "456000",
+      "cityName": "贵港市"
+    }
+  ],
+  "defaultCity": {
+    "index": "2",
+    "cityId": "330300",
+    "cityName": "温州市"
+  }
+}
