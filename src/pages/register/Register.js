@@ -31,7 +31,7 @@ function MyCitySelect(props) {
     const myCitys = props.value;
     const change = props.onChange;
     const selectTag = myCitys.map((myCity) =>
-        <option key={myCity.cityId.toString()} value={myCity.cityId}>
+        <option key={myCity.cityId.toString()} value={myCity.cityId} >
             {myCity.cityName}</option>
     );
     return (<select onChange={change}>{selectTag}</select>)
@@ -160,6 +160,7 @@ function MyForm(props) {
 
 class Register extends Component {
     constructor(props) {
+        console.log("register构造函数")
         super(props);
         this.onInputChange = this.onInputChange.bind(this);
         this.onNickNameChange = this.onNickNameChange.bind(this);
@@ -176,6 +177,10 @@ class Register extends Component {
             currentCity: AreaJson.defaultCity,
             modal : false
         };
+    }
+
+    componentWillMount() {
+        console.log("页面即将被加载")
     }
 
     onInputChange(e) {
@@ -213,7 +218,7 @@ class Register extends Component {
         let p = this.state.password;
         let t = this.state.textArea;
         let c = this.state.currentCity;
-        let modal = this.state.modal;
+        //let modal = this.state.modal;
         console.log(c)
         console.log(u + ";" + p)
         if (u && p && t) {
