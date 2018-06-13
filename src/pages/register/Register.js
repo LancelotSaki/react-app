@@ -2,6 +2,12 @@ import React, {Component} from 'React'
 import AreaJson from './Area'
 import Modal from '../modal/Modal'
 import Loading from '../loading/Loading'
+import {
+    HashRouter as H,
+    Route as R,
+    Link as L,
+    Switch
+} from 'react-router-dom';
 const myFormCss = {
     display: "flex",
     justifyContent: "center",
@@ -254,6 +260,7 @@ class Register extends Component {
             "modal" : modal
         }
         return (<div>
+                <L to="/resume">链接到个人简介</L>
                 <MyForm {...resultValue}/>
                 <Modal show/>
                 <Loading/>

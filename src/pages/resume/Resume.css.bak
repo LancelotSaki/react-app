@@ -1,0 +1,43 @@
+.paperBox {
+    position:relative;
+    margin: auto auto;
+    width: 40%;
+    height: 600px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.paper {
+    position:relative;
+    width:100%;
+    height:100%;
+    background:#fff;
+    border:1px solid #eee;
+    margin:10px;
+    box-shadow:0 0 5px rgba(0,0,0,0.27),0 0 20px  rgba(0,0,0,.1) inset;
+   /* border-bottom-left-radius: 20px 500px;
+    border-bottom-right-radius: 500px 30px;
+    border-top-right-radius: 5px 100px;*/
+    transform: translateY(10px);
+}
+.paper::after,.paper::before {
+    position:absolute;
+    bottom:6px;
+    width:100px;
+    height:1px;
+    z-index:-1;
+    box-shadow:0 2px 12px 5px rgba(0,0,0,.3);
+}
+.paper::after {
+    left:4px;
+    transform:rotate(-6deg);
+}
+.paper::before {
+    right:4px;
+    transform:rotate(6deg);
+}
+
+.myTitle {
+    width:100%;
+}
