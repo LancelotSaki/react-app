@@ -1,0 +1,32 @@
+.leftDoor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: sandybrown;
+    animation: toMoveLeft 2s linear;
+    animation-fill-mode:forwards;
+}
+@keyframes toMoveLeft {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%);
+    }
+    30% {
+        clip-path: polygon(0 0, 60% 0, 60% 100%,0 100%);
+    }
+    60% {
+        clip-path: polygon(0 0, 30% 0, 30% 100%,0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 10% 0, 10% 100%,0 100%);
+    }
+}
+.rightDoor {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: sandybrown;
+}

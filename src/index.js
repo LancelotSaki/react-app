@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import {
     HashRouter as H,
     Route as R,
-    Link as L,
-    Switch
 } from 'react-router-dom';
 import './index.css';
 import Register from './pages/register/Register.js'

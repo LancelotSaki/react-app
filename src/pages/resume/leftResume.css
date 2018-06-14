@@ -1,0 +1,73 @@
+.BackWall {
+    background: rgba(4,4,7,0.82);
+    opacity: 0.7;
+    width: 100vw;
+    height: 100vh;
+    position :fixed;
+}
+.leftResumeCss {
+    position :fixed;
+    left : 0;
+    top: 0;
+    width: 50vw;
+    height: 80vh;
+    background: #dddddd;
+    animation : moveDiv 3s linear ;
+    animation-delay : 2s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes moveDiv {
+    0% {
+        left : 0;
+        top: 0;
+        border: 1px solid #BDCFE4;
+  }
+    50%{
+        left : 1vw;
+        top: 1vh;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+    100% {
+        left : 2vw;
+        top: 2vh;
+        border-radius: 5px;
+        background: #b3cf4d;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        transform: rotateY(30deg);
+    }
+}
+
+
+
+h1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 4.5em;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(26, end),
+    cursor-blink 0.3s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes cursor-blink {
+    50% {
+       /* border-color: transparent;*/
+    }
+}
+
+.personMessage {
+    position: absolute;
+    top: 3.5rem;
+}
+

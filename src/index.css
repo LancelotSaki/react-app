@@ -1,6 +1,31 @@
 /**
  *定义全局样式
  */
+
+@media screen and (max-width: 500px) {
+    html {
+        width: 450px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    html {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1366px) {
+    html {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    html {
+        width: 1200px;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;

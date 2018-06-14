@@ -3,10 +3,7 @@ import AreaJson from './Area'
 import Modal from '../modal/Modal'
 import Loading from '../loading/Loading'
 import {
-    HashRouter as H,
-    Route as R,
     Link as L,
-    Switch
 } from 'react-router-dom';
 const myFormCss = {
     display: "flex",
