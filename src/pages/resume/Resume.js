@@ -3,7 +3,14 @@ import React,{Component}  from 'React';
 require('./leftResume.css');
 require('./rightResume.css')
 require('./door.css')
-const context = `<h>今天给大家表演一个魔术</h>`;
+const context = `今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术
+今天给大家表演一个魔术`;
 
 function BackWall() {
     return (<div className="BackWall"></div>)
@@ -26,25 +33,32 @@ export default class Resume extends Component {
        // const x = p.match.params.id;
         this.state = {
             index: 0,
-            interval: 40,
             currentStyle: ''
         };
 
     }
+   /* 这里进行ajax操作*/
+    //Promise一定要有res返回，没有then方法是不会被调用的
     componentDidMount(){
         let index = this.state.index;
-        let font  = this.state.currentStyle;
-        this.timer = setInterval(function() {
-            if(index === font.length) {
-                this.setState({
-                    index : 0
-                });
-            }
-            this.setState({currentStyle:context.substring(0,index++)});
-        }.bind(this), 120);
+        let pro = new Promise((res) => {
+            this.timer = setInterval(function() {
+                this.setState({currentStyle:context.substring(0,index++)});
+                if(context.length - index < 0) {//设置执行一段时间后停止，要不然定时器会一直执行下去
+                    clearInterval(this.timer);
+                    res({"index":index})
+                }
+            }.bind(this), 40);
+        });
+        pro.then((res)=>{
+            console.log("执行结束了"+res.index)
+        }).catch((err)=>{
+            console.log("执行错误了"+err)
+        })
     }
+
     componentWillUnmount() {
-        clearInterval(this.timer);
+
     }
 
    /* async pChange(e){
