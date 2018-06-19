@@ -1,30 +1,47 @@
 /**
  *定义全局样式
  */
-
-@media screen and (max-width: 500px) {
-    html {
-        width: 450px;
+@media screen and (max-width: 600px){
+    .centerIndex {
+        width: 100vw;
+    }
+    .leftIndex,.rightIndex {
+      display: none;
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 800px) {
-    html {
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .centerIndex {
         width: 600px;
+    }
+    .leftIndex,.rightIndex {
+        width: calc((100vw - 600px)/2);
+        height: 100vh;
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1366px) {
-    html {
-        width: 600px;
+@media screen and (min-width: 800px) and (max-width: 1200px){
+    .centerIndex {
+        width: 800px;
+    }
+    .leftIndex,.rightIndex {
+        width: calc((100vw - 800px)/2);
+        height: 100vh;
     }
 }
 
 @media screen and (min-width: 1200px){
-    html {
-        width: 1200px;
+    .centerIndex {
+        width: 1000px;
+    }
+    .leftIndex,.rightIndex {
+        width: calc((100vw - 1000px)/2);
+        height: 100vh;
     }
 }
+
+
 
 body {
     margin: 0;
@@ -38,4 +55,3 @@ ul {
 ul>li {
     list-style: "none"
 }
-

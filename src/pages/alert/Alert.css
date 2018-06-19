@@ -1,0 +1,26 @@
+.myAlert{
+    position: fixed;
+    /*margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;*/
+    right: 1vw;
+    top: 1vh;
+    width: 250px;
+    height: 35px;
+    border: 1px solid #b3cf4d;
+    border-radius: 5px;
+    background: rgba(99,207,65,0.22);
+}
+
+.myClose {
+    position: absolute;
+    right: 20px;
+    width: 10px;
+    height: 35px;
+    background: #222222;
+}
+.myClose::after {
+    content: "X";
+}

@@ -1,0 +1,116 @@
+@media screen and (max-width: 500px){
+    .page {
+        width: 450px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border:1px solid #ddd;
+    }
+    .bar {
+        display : flex;
+        flex-direction : column;
+        width: 50px;
+        height: 200px;
+        position: relative;
+        left: 1vw;
+        top: 1vh;
+    }
+    .home {
+       width: 50px;
+        flex: 1;
+        border: 1px solid chartreuse;
+        border-radius: 5px;
+    }
+    .anime {
+        width: 50px;
+        flex: 1;
+        border: 1px solid crimson;
+        border-radius: 5px;
+    }
+    .game {
+        width: 50px;
+        flex: 1;
+        border: 1px solid rosybrown;
+        border-radius: 5px;
+    }
+    .film {
+        width: 50px;
+        flex: 1;
+        border: 1px solid darkorange;
+        border-radius: 5px;
+    }
+    .bar div:hover {
+        cursor: pointer;
+    }
+    .bar div:active {
+        background: #BDCFE4;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .page {
+        width: 600px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        border:1px solid #ddd;
+    }
+    .bar {
+        display : flex;
+        justify-content : space-evenly;
+        position: relative;
+        left: 1vw;
+        top: 2px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px){
+    .page {
+        width: 90vw;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        border:1px solid #ddd;
+    }
+    .bar {
+        display : flex;
+        justify-content : space-evenly;
+        position: relative;
+        left: 1vw;
+        top: 2px;
+    }
+
+
+}
+
+@media screen and (min-width: 1200px){
+     .page {
+         width: 1000px;
+         position: fixed;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         margin: auto;
+         text-align: center;
+         border:1px solid #ddd;
+     }
+    .bar {
+        display : flex;
+        justify-content : space-evenly;
+        position: relative;
+        top: 2px;
+    }
+
+}
