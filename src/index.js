@@ -5,7 +5,7 @@ import {
     Route as R,
 } from 'react-router-dom';
 import './index.css';
-import Main from './pages/main/Main'
+import Main from './pages/main/Main.js'
 import Register from './pages/register/Register.js'
 import Resume from './pages/resume/Resume.js'
 import Alert from './pages/alert/Alert.js'
@@ -15,7 +15,7 @@ import registerServiceWorker from './registerServiceWorker';
 //const width = document.documentElement.clientWidth 这种方式判断并不实用
 
 ReactDOM.render(
-    <div>
+    <div className="index">
         <div className="leftIndex"></div>
         <H>
             <div className="centerIndex">
