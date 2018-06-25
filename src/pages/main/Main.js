@@ -1,66 +1,44 @@
-import React,{Component} from 'React'
+import React, {Component} from 'React'
 import "./main.css"
-import cell from "../../images/svg/cellphone.svg"
-import eva from "../../images/svg/evaluate.svg"
-import email from "../../images/svg/email.svg"
-import workExp from "../../images/svg/workExp.svg"
-import stuExp from "../../images/svg/stuExp.svg"
-import skill from "../../images/svg/skill.svg"
-import perIcon from "../../images/svg/personMessage.svg"
 import githubImage from '../../images/forkme.png'
 
 export default class Main extends Component {
-    render(){
+    render() {
         return (<div className={`page`}>
-            <div className={`triangleImage`}>
-                <a className={`forkMyGithub`} href={`https://github.com/LancelotSaki/react-app`}>
-                    <img src={githubImage}/>
-                </a>
-            </div>
+            {/*这是右上角的内容*/}
+            <a className={`forkMyGithub`} href={`https://github.com/LancelotSaki/react-app`} target="_blank">
+                <img src={githubImage}/>
+            </a>
+            <div className={`triangleImage`}></div>
+            {/*这是面板层*/}
             <div className={`myPanel`}>
-                <div className={`myHeadPhoto`}></div>
-                <div className={`myPhoto`}></div>
+                {/*这是头像*/}
+                <div className="myHeadPhoto"></div>
+                <div className="myPhoto"></div>
+
+
                 <div className={`personMess`}>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={cell} className={`cellImage`}/>
-                        </li>
-                        <li> 18888888888</li>
-                    </ul>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={eva} className={`cellImage`}/>
-                        </li>
-                        <li> 18888888888</li>
-                    </ul>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={email} className={`cellImage`}/>
-                        </li>
-                        <li>1103418874@qq.com</li>
-                    </ul>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={workExp} className={`cellImage`}/>
-                        </li>
-                        <li> 18888888888</li>
-                    </ul>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={stuExp} className={`cellImage`}/>
-                        </li>
-                        <li> 18888888888</li>
-                    </ul>
-                    <ul className={`perUl`}>
-                        <li>
-                            <img src={skill} className={`cellImage`}/>
-                        </li>
-                        <li> 18888888888</li>
-                    </ul>
+                    <div className={`perCellPhone`}>1888888887</div>
+                    <div className={`perEva`}>评价</div>
+                    <div className={`perEmail`}>邮箱</div>
+                    <div className={`perExp`}>工作经历</div>
+                    <div className={`perStu`}>教育经历</div>
+                    <div className={`perSkill`}>个人技能</div>
+                    <div className={`skillProgress`}>
+                        <progress value={`0.78`} className={`myJavaProgress`}/>
+                        <progress value={`0.55`} className={`myLinuxProgress`}/>
+                        <progress value={`0.6`} className={`myReactProgress`}/>
+                        <progress value={`0.65`} className={`myVueProgress`}/>
+                        <progress value={`0.5`} className={`myJavaScriptProgress`}/>
+                        <progress value={`0.54`} className={`myJqueryProgress`}/>
+                        <progress value={`0.4`} className={`myCssProgress`}/>
+                    </div>
                 </div>
 
-                <div className={`myMess`}></div>
+                {/*这是右下角个人详细信息层*/}
+                <div className={`myMess`}>
 
+                </div>
             </div>
         </div>)
     }
