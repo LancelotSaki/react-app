@@ -19,4 +19,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /.idea
-/.map
+/build/static/js/*.map
+/build/static/css/*.map
