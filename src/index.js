@@ -15,10 +15,10 @@ import registerServiceWorker from './registerServiceWorker';
 //const width = document.documentElement.clientWidth 这种方式判断并不实用
 
 ReactDOM.render(
-    <div className="index">
-        <div className="leftIndex"></div>
+    <div >
+        {/*<div className="leftIndex"></div>*/}
         <H>
-            <div className="centerIndex">
+            <div className="index">
                 <R exact path="/" component={Main}/>
                 <R exact path="/register" component={Register}/>
                 <R path="/resume" component={Resume}/>
@@ -26,7 +26,7 @@ ReactDOM.render(
                 <R path="/p" component={Photo}></R>
             </div>
         </H>
-        <div className="rightIndex"></div>
+        {/*<div className="rightIndex"></div>*/}
     </div>
    ,
 document.getElementById('root'));

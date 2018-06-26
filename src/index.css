@@ -16,6 +16,7 @@ ul>li {
 }
 
 /*自媒体查询*/
+/*
 @media screen and (max-width: 600px){
     .centerIndex {
         width: 100vw;
@@ -24,9 +25,10 @@ ul>li {
       display: none;
     }
 }
+*/
 
 
-@media screen and (min-width: 600px) and (max-width: 800px){
+/*@media screen and (min-width: 600px) and (max-width: 800px){
     .centerIndex {
         width: 600px;
     }
@@ -34,7 +36,8 @@ ul>li {
         width: calc((100vw - 600px)/2);
         height: 100vh;
     }
-}
+}*/
+/*
 
 @media screen and (min-width: 800px) and (max-width: 1200px){
     .centerIndex {
@@ -45,7 +48,9 @@ ul>li {
         height: 100vh;
     }
 }
+*/
 
+/*
 @media screen and (min-width: 1200px){
     .centerIndex {
         width: 1000px;
@@ -55,6 +60,7 @@ ul>li {
         height: 100vh;
     }
 }
+*/
 
 .index {
     display: flex;

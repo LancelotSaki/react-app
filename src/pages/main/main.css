@@ -1,16 +1,47 @@
-.page {
-    position: fixed;
-    width: 700px;
-    height: 600px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border-radius: 5px;
-    border: 1px solid red;
+/*自媒体查询*/
+@media screen and (max-width: 600px){
+    .page {
+        position: relative;
+        width: 794px;
+        height: 1090px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
 }
-.triangleImage {
+
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .page {
+        position: relative;
+        width: 600px;
+        height: 1090px;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .page {
+        position: relative;
+        width: 794px;
+        height: 1090px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+}
+
+
+.triangleCatImage {
     position: absolute;
     right: 0;
     top: 0;
@@ -20,6 +51,12 @@
     background-image: url("../../images/svg/gitHub.svg");
     background-size: contain;
 }
+
+.triangleCatImage:hover {
+    animation: moveCat 2s linear forwards;
+}
+
+
 .forkMyGithub {
     position: absolute;
     right: 0;
@@ -27,34 +64,17 @@
     z-index: 10;
     width: 150px;
     height: 150px;
-    clip-path: polygon(0% 0%, 45% 0%, 100% 50%, 100% 100%);
+    clip-path: polygon(5% 0%, 45% 0%, 100% 55%, 100% 95%);
 }
 
-.forkMyGithub:hover {
-    animation: draw 0.5s linear forwards;
-}
-
-@keyframes draw {
-    0% {
-        stroke-dasharray: 160 520;
-        stroke-dashoffset: -460;
-        stroke-width: 4px;
-    }
-    100% {
-        stroke-dasharray: 760;
-        stroke-dashoffset: 0;
-        stroke-width: 2px;
-        stroke:#3F51B5;
-    }
-}
 
 .myPanel {
     width: 100%;
-    height: 600px;
+    height: 1060px;
     text-align: center;
     background: darkorange;
     opacity: 0.8;
-    clip-path: polygon(2% 2%,80% 2%,100% 25%,32% 25%,32% 98%, 4% 98%,4% 25%, 2% 25%);
+    clip-path: polygon(5px 5px,650px 5px,100% 150px,32% 150px,32% 98%, 15px 98%,15px 150px, 5px 150px);
     z-index: 8;
 }
 
@@ -62,7 +82,7 @@
     position: absolute;
     height: 30px;
     width: 50px;
-    left: 43.5%;
+    left: 95px;
     top: 15px;
     background: red;
     clip-path: polygon(0% 8%, 25% 35%, 50% 0%, 75% 35%, 100% 8%, 88% 100%, 12% 100%);
@@ -70,8 +90,8 @@
 
 .myPhoto {
     position: absolute;
-    top: 45px;
-    left: 40%;
+    top: 50px;
+    left: 70px;
     width: 100px;
     height: 100px;
     background: pink;
@@ -111,7 +131,7 @@
 .myPhoto:hover {
     width: 120px;
     height: 120px;
-    left: 39%;
+    left: 63px;
 }
 
 .myPhoto:hover::after {
@@ -123,22 +143,20 @@
     display: inline-block;
 }
 
-.myPhoto:hover.myHeadPhoto{
-    position: absolute;
-    height: 30px;
-    width: 50px;
-    left: 43.5%;
-    top: 15px;
-    background: darkorange;
-    clip-path: polygon(0% 8%, 25% 35%, 50% 0%, 75% 35%, 100% 8%, 88% 100%, 12% 100%);
+.showMyName {
+    position: relative;
+    width: 100px;
+    top: 150px;
+    left: 70px;
 }
+
 
 .personMess{
     position: absolute;
     height: 100px;
     width: 21%;
-    left: 5%;
-    top: 30%;
+    left: 35px;
+    top: 200px;
 }
 
 .cellImage {
@@ -146,18 +164,31 @@
     height: 22px;
 }
 
-.perUl {
-    display: flex;
+.perName {
+    text-align: left;
+}
+.perName::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: url("../../images/svg/name.svg") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: relative;
+    top: 5px;
 }
 
-.myMess {
+.perName::after {
+    content: "";
+    width: 160px;
+    height: 1px;
+    background: #222222;
+    display: inline-block;
+    top: 30px;
     position: absolute;
-    left: 33%;
-    top: 26%;
-    width: 60%;
-    height: 70%;
-    background: #BDCFE4;
+    left: 25px;
 }
+
 
 .perCellPhone {
     text-align: left;
@@ -233,6 +264,7 @@
 .skillProgress {
     position: absolute;
     left: 80px;
+    top: 600px;
 }
 
 .skillProgress progress {
@@ -253,6 +285,22 @@
     width: 140px;
     text-align: left;
     margin-left: -52px;
+}
+
+.myOracleProgress::before {
+    content: "Oracle";
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+    margin-left: -65px;
+}
+
+.mySqlProgress::before {
+    content: "Mysql";
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+    margin-left: -58px;
 }
 .myReactProgress::before {
     content: "React";
@@ -292,4 +340,131 @@
     width: 140px;
     text-align: left;
     margin-left: -30px;
+}
+
+/*右下角信息*/
+.myMess {
+    position: absolute;
+    left: 33%;
+    top: 170px;
+    width: 520px;
+    height: 850px;
+    background: #BDCFE4;
+}
+
+.workTopLine {
+    width: 450px;
+    height: 1px;
+    background-color: blue;
+    position: absolute;
+    top: 35px;
+    left: 30px;
+}
+
+.workExp {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.workExp::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: url("../../images/svg/workExp.svg") ;
+    background-size: contain;
+    display: inline-block;
+}
+
+/*左上角直线*/
+.workLeftTopLine {
+    width: 1px;
+    height: 150px;
+    background-color: blue;
+    left: 20px;
+    position: absolute;
+    top: 35px;
+}
+
+.workLeftTopLine::before, .workLeftTopLine::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: lawngreen;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%)
+}
+
+.workLeftTopLine::before {
+    top: 40px;
+}
+
+.workLeftTopLine::after {
+    top : 100px;
+}
+
+/*左下角直线start*/
+
+.workLeftBottomLine {
+    width: 1px;
+    height: 150px;
+    background-color: blue;
+    left: 20px;
+    position: absolute;
+    top: 180px;
+}
+
+.workLeftBottomLine::before, .workLeftBottomLine::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: lawngreen;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%)
+}
+
+.workLeftBottomLine::before{
+    top: 40px;
+}
+
+.workLeftBottomLine::after {
+    top: 80px;
+}
+/*左下角直线end*/
+
+
+.workTable{
+    width: 380px;
+    position: absolute;
+    left: 10px;
+    top: 50px;
+}
+
+.workTable ul {
+    display: flex;
+}
+
+.workTable ul:first-child {
+    height: 80px;
+}
+
+.workTable ul:nth-child(2) {
+    height: 80px;
+}
+
+.workLeftBottomLine ul:last-child {
+    height: 80px;
+}
+
+.workTable ul>li:first-child {
+    flex: 2;
+}
+.workTable ul>li:last-child {
+    flex: 3;
 }
