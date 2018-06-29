@@ -16,7 +16,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <div >
-        {/*<div className="leftIndex"></div>*/}
         <H>
             <div className="index">
                 <R exact path="/" component={Main}/>
@@ -26,7 +25,6 @@ ReactDOM.render(
                 <R path="/p" component={Photo}></R>
             </div>
         </H>
-        {/*<div className="rightIndex"></div>*/}
     </div>
    ,
 document.getElementById('root'));

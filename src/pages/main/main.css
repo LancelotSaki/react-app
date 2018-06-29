@@ -1,6 +1,6 @@
 /*自媒体查询*/
-@media screen and (max-width: 600px){
-    .page {
+
+.page {
         position: relative;
         width: 794px;
         height: 1090px;
@@ -11,34 +11,9 @@
         margin: auto;
         border-radius: 5px;
         border: 1px solid red;
+        background: url("../../images/label/2.png") no-repeat;
+         background-size: 794px 1090px;
     }
-}
-
-
-@media screen and (min-width: 600px) and (max-width: 800px){
-    .page {
-        position: relative;
-        width: 600px;
-        height: 1090px;
-        border-radius: 5px;
-        border: 1px solid red;
-    }
-}
-
-@media screen and (min-width: 800px){
-    .page {
-        position: relative;
-        width: 794px;
-        height: 1090px;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        border-radius: 5px;
-        border: 1px solid red;
-    }
-}
 
 
 .triangleCatImage {
@@ -66,6 +41,16 @@
     height: 150px;
     clip-path: polygon(5% 0%, 45% 0%, 100% 55%, 100% 95%);
 }
+.forkMyGithub::after {
+    content: "";
+    display: inline-block;
+    background-image: url("../../images/forkme.png");
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+}
 
 
 .myPanel {
@@ -73,8 +58,7 @@
     height: 1060px;
     text-align: center;
     background: darkorange;
-    opacity: 0.8;
-    clip-path: polygon(5px 5px,650px 5px,100% 150px,32% 150px,32% 98%, 15px 98%,15px 150px, 5px 150px);
+    clip-path: polygon(5px 5px,650px 5px,100% 150px,260px 150px,260px 98%, 10px 98%,10px 150px, 5px 150px);
     z-index: 8;
 }
 
@@ -154,15 +138,36 @@
 .personMess{
     position: absolute;
     height: 100px;
-    width: 21%;
-    left: 35px;
+    width: 240px;
+    left: 15px;
     top: 200px;
 }
 
-.cellImage {
-    width: 22px;
+.personMess::before {
+    content: "个人信息";
+    width: 120px;
     height: 22px;
+    background: url("../../images/svg/name.svg") no-repeat;
+    background-size: 22px 22px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: -60px;
 }
+
+.personMess::after {
+    content: "";
+    width: 200px;
+    height: 1px;
+    background: #222222;
+    display: inline-block;
+    top: 30px;
+    position: absolute;
+    left: 25px;
+}
+
+
+/*
 
 .perName {
     text-align: left;
@@ -188,9 +193,11 @@
     position: absolute;
     left: 25px;
 }
+*/
 
 
 .perCellPhone {
+    margin-top: 35px;
     text-align: left;
 }
 .perCellPhone::before {
@@ -249,50 +256,69 @@
     display: inline-block;
 }
 
-.perSkill {
-    text-align: left;
-}
-.perSkill::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/skill.svg") ;
-    background-size: contain;
-    display: inline-block;
-}
-
 .skillProgress {
     position: absolute;
-    left: 80px;
-    top: 600px;
+    left: 100px;
+    top: 550px;
+    width: 220px;
+    height: 200px;
+}
+
+.skillProgress::before {
+    content: "个人技能";
+    width: 100px;
+    height: 22px;
+    display: inline-block;
+    left: -85px;
+    top: -30px;
+    position: absolute;
+    padding-left: 10px;
+    background: url("../../images/svg/skill.svg") no-repeat;
+    background-size: 22px 22px;
+}
+
+.skillProgress::after {
+    content: "";
+    display: inline-block;
+    width: 200px;
+    height: 1px;
+    background-color: blue;
+    position: absolute;
+    top: -5px;
+    left: -55px;
 }
 
 .skillProgress progress {
-    width: 100px;
-    height: 15px;
+    width: 150px;
+    height: 20px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .myJavaProgress::before {
     content: "Java";
     display: inline-block;
-    width: 140px;
+    width: 110px;
     text-align: left;
-    margin-left: -38px;
+    margin-left: -125px;
 }
+
+.myJavaProgress::-webkit-progress-value { background: #34538b; }
+
 .myLinuxProgress::before {
     content: "Linux";
     display: inline-block;
-    width: 140px;
+    width: 125px;
     text-align: left;
-    margin-left: -52px;
+    margin-left: -125px;
 }
 
 .myOracleProgress::before {
     content: "Oracle";
     display: inline-block;
-    width: 140px;
+    width: 144px;
     text-align: left;
-    margin-left: -65px;
+    margin-left: -125px;
 }
 
 .mySqlProgress::before {
@@ -300,66 +326,66 @@
     display: inline-block;
     width: 140px;
     text-align: left;
-    margin-left: -58px;
+    margin-left: -125px;
 }
 .myReactProgress::before {
     content: "React";
     display: inline-block;
-    width: 140px;
+    width: 133px;
     text-align: left;
-    margin-left: -54px;
+    margin-left: -125px;
 }
 
 .myVueProgress::before {
     content: "Vue";
     display: inline-block;
-    width: 140px;
+    width: 110px;
     text-align: left;
-    margin-left: -34px;
+    margin-left: -125px;
 }
 
 .myJavaScriptProgress::before {
     content: "JavaScript";
     display: inline-block;
-    width: 140px;
+    width: 200px;
     text-align: left;
-    margin-left: -120px;
+    margin-left: -125px;
 }
 
 .myJqueryProgress::before {
     content: "Jquery";
     display: inline-block;
-    width: 140px;
+    width: 150px;
     text-align: left;
-    margin-left: -67px;
+    margin-left: -125px;
 }
 
 .myCssProgress::before {
     content: "Css";
     display: inline-block;
-    width: 140px;
+    width: 100px;
     text-align: left;
-    margin-left: -30px;
+    margin-left: -125px;
+}
+
+.myExtJsProgress::before {
+    content: "ExtJs";
+    display: inline-block;
+    width: 118px;
+    text-align: left;
+    margin-left: -125px;
 }
 
 /*右下角信息*/
-.myMess {
+.myMessageDetail {
     position: absolute;
-    left: 33%;
-    top: 170px;
-    width: 520px;
-    height: 850px;
+    left: 265px;
+    top: 155px;
+    width: 525px;
+    height: 280px;
     background: #BDCFE4;
 }
 
-.workTopLine {
-    width: 450px;
-    height: 1px;
-    background-color: blue;
-    position: absolute;
-    top: 35px;
-    left: 30px;
-}
 
 .workExp {
     position: absolute;
@@ -374,6 +400,32 @@
     background: url("../../images/svg/workExp.svg") ;
     background-size: contain;
     display: inline-block;
+}
+.workExp::after {
+    content: "";
+    display: inline-block;
+    width: 450px;
+    height: 1px;
+    background-color: blue;
+    position: absolute;
+    top: 30px;
+    left: 25px;
+}
+
+.workExp>div::before {
+    content: "公司经历";
+    display: inline-block;
+    background: blue;
+    width: 120px;
+    height: 20px;
+    clip-path: polygon(0 0, 85% 0, 100% 20px, 0 20px);
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    color: white;
+    padding-left: 5px;
+    text-align: left;
+    line-height: 20px;
 }
 
 /*左上角直线*/
@@ -410,7 +462,7 @@
 
 .workLeftBottomLine {
     width: 1px;
-    height: 150px;
+    height: 40px;
     background-color: blue;
     left: 20px;
     position: absolute;
@@ -434,16 +486,15 @@
 }
 
 .workLeftBottomLine::after {
-    top: 80px;
+    top: 40px;
 }
 /*左下角直线end*/
 
-
+/*工作经历css start*/
 .workTable{
-    width: 380px;
-    position: absolute;
-    left: 10px;
-    top: 50px;
+    width: 520px;
+    margin-top: 35px;
+    margin-left: 5px;
 }
 
 .workTable ul {
@@ -458,7 +509,7 @@
     height: 80px;
 }
 
-.workLeftBottomLine ul:last-child {
+.workTable ul:last-child {
     height: 80px;
 }
 
@@ -466,5 +517,134 @@
     flex: 2;
 }
 .workTable ul>li:last-child {
+    flex: 3;
+}
+/*工作经历css end*/
+
+.projectDetail {
+    position: absolute;
+    background: lightgreen;
+    left: 265px;
+    top: 455px;
+    width: 525px;
+    height: 280px;
+}
+
+.projectLeftTopLine {
+    width: 1px;
+    height: 150px;
+    background-color: blue;
+    left: 20px;
+    position: absolute;
+    top: 35px;
+}
+
+.projectLeftTopLine::before,.projectLeftTopLine::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: lawngreen;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%)
+}
+
+
+.projectLeftTopLine::before {
+    top: 40px;
+}
+
+.projectLeftTopLine::after {
+    top : 100px;
+}
+
+.projectExp {
+    position: absolute;
+    left: 10px;
+}
+
+.projectExp::before {
+    content: "";
+    display: inline-block;
+    background-image: url("../../images/svg/workExp.svg");
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+}
+
+.projectExp::after {
+    content: "";
+    display : inline-block;
+    width: 450px;
+    height: 1px;
+    background: #222222;
+    position: absolute;
+    left: 20px;
+    top: 28px;
+}
+
+
+.projectExp>div::before {
+    content: "项目经历";
+    display: inline-block;
+    background: blue;
+    width: 120px;
+    height: 20px;
+    clip-path: polygon(0 0, 85% 0, 100% 20px, 0 20px);
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    color: white;
+    padding-left: 5px;
+    text-align: left;
+    line-height: 20px;
+}
+
+.projectLeftBottomLine {
+    width: 1px;
+    height: 40px;
+    background-color: blue;
+    left: 20px;
+    position: absolute;
+    top: 180px;
+}
+
+.projectLeftBottomLine::before, .projectLeftBottomLine::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: lawngreen;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%)
+}
+
+.projectLeftBottomLine::before{
+    top: 40px;
+}
+
+.projectLeftBottomLine::after {
+    top: 40px;
+}
+
+
+.expTable {
+    margin-top: 35px;
+    margin-left: 5px;
+    width: 520px;
+}
+.expTable ul {
+    display: flex;
+    height: 80px;
+}
+.expTable ul>li:first-child{
+      flex: 2;
+}
+.expTable ul>li:nth-child(2){
     flex: 3;
 }

@@ -1,6 +1,16 @@
 {
-  "main.css": "static/css/main.de81410f.css",
-  "main.css.map": "static/css/main.de81410f.css.map",
-  "main.js": "static/js/main.b6df575d.js",
-  "main.js.map": "static/js/main.b6df575d.js.map"
+  "main.css": "static/css/main.1cda28e6.css",
+  "main.css.map": "static/css/main.1cda28e6.css.map",
+  "main.js": "static/js/main.232d1442.js",
+  "main.js.map": "static/js/main.232d1442.js.map",
+  "static\\media\\cat.png": "static/media/cat.df7dd3e8.png",
+  "static\\media\\catSing.png": "static/media/catSing.f403f0fa.png",
+  "static\\media\\email.svg": "static/media/email.630fd2a2.svg",
+  "static\\media\\evaluate.svg": "static/media/evaluate.359a93e4.svg",
+  "static\\media\\gitHub.svg": "static/media/gitHub.421fa3d2.svg",
+  "static\\media\\name.svg": "static/media/name.601a31dc.svg",
+  "static\\media\\phone.svg": "static/media/phone.c02b2277.svg",
+  "static\\media\\skill.svg": "static/media/skill.da86a0df.svg",
+  "static\\media\\stuExp.svg": "static/media/stuExp.cb19bd2d.svg",
+  "static\\media\\workExp.svg": "static/media/workExp.f9990907.svg"
 }

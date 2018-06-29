@@ -1,8 +1,8 @@
 import React,{Component}  from 'React';
 //import carney from '../../images/carney.png'
-require('./leftResume.css');
-require('./rightResume.css')
-require('./door.css')
+const l = require('./leftResume.css');
+const r = require('./rightResume.css')
+const d = require('./door.css')
 const context = `reactJs版`;
 
 let map = new Map();
@@ -31,15 +31,15 @@ map.set("name", "My name is blank page")
     .set("thirdOffice","Linux运维服务")
 
 function BackWall() {
-    return (<div className="BackWall"></div>)
+    return (<div className={l.backWall}></div>)
 }
 
 function OpenDoor() {
     return (<div>
-        <div className="leftDoor">
+        <div className={d.leftDoor}>
 
         </div>
-        <div className="rightDoor">
+        <div className={d.rightDoor}>
 
         </div>
     </div>)
@@ -171,10 +171,10 @@ export default class Resume extends Component {
         //this.pChange().then(x => console.log(x))
         return (<div className="allResume">
             <BackWall/>
-            <div className="leftResumeCss">
+            <div className={l.leftResumeCss}>
                 <h1>个人简历</h1>
-                <div className="personMessage">{this.state.currentStyle}</div>
-                <div className="resumeToggleCss" id="myResumeId">
+                <div className={l.personMessage}>{this.state.currentStyle}</div>
+                <div className={l.resumeToggleCss} id="myResumeId">
                     <ul style={ul}>
                         <Li c="姓名"/>
                         <Li flex={2} c={this.state.name}/>
@@ -252,8 +252,8 @@ export default class Resume extends Component {
                     </ul>
                 </div>
             </div>
-            <div className="rightResumeCss">
-                <div className="personMessage">{this.state.rightFont}</div>
+            <div className={r.rightResumeCss}>
+                <div className={l.personMessage}>{this.state.rightFont}</div>
             </div>
             <OpenDoor/>
         </div>)
