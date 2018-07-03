@@ -1,5 +1,4 @@
 /*自媒体查询*/
-
 .page {
         position: relative;
         width: 794px;
@@ -8,11 +7,11 @@
         left: 0;
         bottom: 0;
         right: 0;
-        margin: auto;
+        margin: 35px auto;
         border-radius: 5px;
         border: 1px solid red;
-        background: url("../../images/label/2.png") no-repeat;
-         background-size: 794px 1090px;
+      /*  background: url("../../images/label/2.png") no-repeat;
+         background-size: 794px 1090px;*/
     }
 
 
@@ -57,32 +56,52 @@
     width: 100%;
     height: 1060px;
     text-align: center;
-    background: darkorange;
+    background: rgba(1,2,6,0.84);
     clip-path: polygon(5px 5px,650px 5px,100% 150px,260px 150px,260px 98%, 10px 98%,10px 150px, 5px 150px);
     z-index: 8;
 }
 
-.myHeadPhoto{
+/*王冠*/
+.headPhotoCircle::before {
+    content: "";
     position: absolute;
     height: 30px;
     width: 50px;
-    left: 95px;
-    top: 15px;
+    left: 23px;
+    top: -33px;
     background: red;
     clip-path: polygon(0% 8%, 25% 35%, 50% 0%, 75% 35%, 100% 8%, 88% 100%, 12% 100%);
 }
 
-.myPhoto {
-    position: absolute;
+.headPhotoCircle {
+    position: relative;
     top: 50px;
     left: 70px;
     width: 100px;
     height: 100px;
-    background: pink;
-    clip-path: ellipse(50% 50% at 50% 50%);
     animation : moveCat 2s linear ;
     animation-delay : 1s;
     animation-fill-mode:forwards;
+    color: white;
+}
+.headPhotoCircle::after {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: url("../../images/cat.png") no-repeat;
+    background-size: 110px 150px;
+}
+
+.headPhotoCircle:hover::after {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: url("../../images/catSing.png") no-repeat;
+    background-size: 100px 150px;
 }
 
 @keyframes moveCat {
@@ -96,44 +115,26 @@
         transform: rotateY(180deg);
     }
     75%{
-        transform: rotateY(240deg);
+        transform: rotateY(270deg);
     }
     100% {
         transform: rotateY(360deg);
     }
 }
-/*使用::after添加一张图片*/
-.myPhoto::after {
-    content: "";
-    width: 120px;
-    height: 150px;
-    background: url("../../images/cat.png");
-    background-size: contain;
-    display: inline-block;
-}
 
-.myPhoto:hover {
-    width: 120px;
-    height: 120px;
-    left: 63px;
-}
 
-.myPhoto:hover::after {
-    content: "";
-    width: 130px;
-    height: 180px;
-    background: url("../../images/catSing.png");
-    background-size: contain;
-    display: inline-block;
-}
 
 .showMyName {
     position: relative;
     width: 100px;
-    top: 150px;
+    top: 55px;
     left: 70px;
+    color: white;
 }
-
+.showMyName::after {
+    content: attr(data);
+    display: inline-block;
+}
 
 .personMess{
     position: absolute;
@@ -142,7 +143,7 @@
     left: 15px;
     top: 200px;
 }
-
+/*
 .personMess::before {
     content: "个人信息";
     width: 120px;
@@ -164,104 +165,84 @@
     top: 30px;
     position: absolute;
     left: 25px;
+}*/
+.phone, .university, .major, .email, .address{
+    height: 35px;
 }
-
-
-/*
-
-.perName {
+.phone::before {
+    content: attr(data);
+    width: 240px;
+    height: 35px;
+    background: url("../../images/svg/phone.svg") no-repeat  0px 4px;
+    display: inline-block;
+    background-size: 22px 22px;
+    padding-left: 35px;
+    color: white;
+    line-height: 35px;
     text-align: left;
 }
-.perName::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/name.svg") no-repeat;
-    background-size: contain;
+
+
+.university::before {
+    content: attr(data);
+    width: 240px;
+    height: 35px;
+    background: url("../../images/svg/university.svg") no-repeat  0px 4px;
     display: inline-block;
-    position: relative;
-    top: 5px;
-}
-
-.perName::after {
-    content: "";
-    width: 160px;
-    height: 1px;
-    background: #222222;
-    display: inline-block;
-    top: 30px;
-    position: absolute;
-    left: 25px;
-}
-*/
-
-
-.perCellPhone {
-    margin-top: 35px;
+    background-size: 22px 22px;
+    padding-left: 35px;
+    color: white;
+    line-height: 35px;
     text-align: left;
 }
-.perCellPhone::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/phone.svg") ;
-    background-size: contain;
-    display: inline-block;
-}
 
-.perEva {
-  text-align: left;
-}
 
-.perEva::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/evaluate.svg") ;
-    background-size: contain;
+.major::before {
+    content: attr(data);
+    width: 240px;
+    height: 35px;
+    background: url("../../images/svg/major.svg") no-repeat 0px 4px;
     display: inline-block;
-}
-.perEmail {
+    background-size: 22px 22px;
+    padding-left: 35px;
+    color: white;
+    line-height: 35px;
     text-align: left;
 }
-.perEmail::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/email.svg") ;
-    background-size: contain;
+
+.email::before {
+    content: attr(data);
+    width: 240px;
+    height: 35px;
+    background: url("../../images/svg/email.svg") no-repeat  0px 4px;
     display: inline-block;
-}
-.perExp{
+    background-size: 22px 22px;
+    padding-left: 35px;
+    color: white;
+    line-height: 35px;
     text-align: left;
-}
-.perExp::before {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/workExp.svg") ;
-    background-size: contain;
-    display: inline-block;
 }
 
-.perStu {
+.address::before {
+    content: attr(data);
+    width: 240px;
+    height: 35px;
+    background: url("../../images/svg/address.svg") no-repeat 0px 5px;
+    display: inline-block;
+    background-size: 22px 22px;
+    padding-left: 35px;
+    color: white;
+    line-height: 35px;
     text-align: left;
 }
-.perStu::before{
-    content: "";
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/stuExp.svg") ;
-    background-size: contain;
-    display: inline-block;
-}
+
 
 .skillProgress {
     position: absolute;
-    left: 100px;
-    top: 550px;
-    width: 220px;
-    height: 200px;
+    left: 15px;
+    top: 500px;
+    width: 240px;
+    height: 400px;
 }
 
 .skillProgress::before {
@@ -269,12 +250,13 @@
     width: 100px;
     height: 22px;
     display: inline-block;
-    left: -85px;
+    left: 0px;
     top: -30px;
     position: absolute;
     padding-left: 10px;
     background: url("../../images/svg/skill.svg") no-repeat;
     background-size: 22px 22px;
+    color: white;
 }
 
 .skillProgress::after {
@@ -285,99 +267,119 @@
     background-color: blue;
     position: absolute;
     top: -5px;
-    left: -55px;
+    left: 25px;
 }
 
-.skillProgress progress {
-    width: 150px;
-    height: 20px;
-    display: block;
-    margin-bottom: 5px;
-}
 
-.myJavaProgress::before {
-    content: "Java";
-    display: inline-block;
-    width: 110px;
-    text-align: left;
-    margin-left: -125px;
-}
-
-.myJavaProgress::-webkit-progress-value { background: #34538b; }
-
-.myLinuxProgress::before {
-    content: "Linux";
-    display: inline-block;
-    width: 125px;
-    text-align: left;
-    margin-left: -125px;
-}
-
-.myOracleProgress::before {
-    content: "Oracle";
-    display: inline-block;
-    width: 144px;
-    text-align: left;
-    margin-left: -125px;
-}
-
-.mySqlProgress::before {
-    content: "Mysql";
-    display: inline-block;
-    width: 140px;
-    text-align: left;
-    margin-left: -125px;
-}
-.myReactProgress::before {
-    content: "React";
-    display: inline-block;
-    width: 133px;
-    text-align: left;
-    margin-left: -125px;
-}
-
-.myVueProgress::before {
-    content: "Vue";
-    display: inline-block;
-    width: 110px;
-    text-align: left;
-    margin-left: -125px;
-}
-
-.myJavaScriptProgress::before {
-    content: "JavaScript";
-    display: inline-block;
+.myJava,.myLinux,.myOracle,.mySql,.myReact,.myVue,.myJquery,.myJavaScript,.myCss {
     width: 200px;
-    text-align: left;
-    margin-left: -125px;
+    height: 28px;
+    margin-bottom: 8px;
+    padding-left: 40px;
+    left: 1px;
+    line-height: 28px;
 }
 
-.myJqueryProgress::before {
-    content: "Jquery";
+.myJava::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/java.svg") no-repeat 0px 0px;
     display: inline-block;
-    width: 150px;
-    text-align: left;
-    margin-left: -125px;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
 }
 
-.myCssProgress::before {
-    content: "Css";
+.myLinux::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/linux.svg") no-repeat 0px 0px;
     display: inline-block;
-    width: 100px;
-    text-align: left;
-    margin-left: -125px;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
 }
 
-.myExtJsProgress::before {
-    content: "ExtJs";
+.myOracle::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/oracle.svg") no-repeat 0px 0px;
     display: inline-block;
-    width: 118px;
-    text-align: left;
-    margin-left: -125px;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+
+.mySql::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/mysql.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+.myReact::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/react.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+
+.myVue::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/vue.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+
+.myJavaScript::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/javascript.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+
+.myJquery::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/jquery.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
+}
+
+.myCss::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background: url("../../images/svg/skill-icon/css.svg") no-repeat 0px 0px;
+    display: inline-block;
+    background-size: 30px 30px;
+    position: absolute;
+    left: 0;
 }
 
 /*右下角信息*/
-.myMessageDetail {
+.myWorkDetail {
     position: absolute;
     left: 265px;
     top: 155px;
@@ -386,6 +388,12 @@
     background: #BDCFE4;
 }
 
+.workTimeLine {
+    position: absolute;
+    left: 15px;
+    top: 45px;
+    text-align: left;
+}
 
 .workExp {
     position: absolute;
