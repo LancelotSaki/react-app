@@ -1,0 +1,55 @@
+.remu {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+}
+.remu::before {
+    content: "";
+    display: inline-block;
+    background: url("../../images/re0/remu001.png") no-repeat;
+    width: 75px;
+    height: 55px;
+    background-size: 100% 100%;
+}
+
+.remu:hover {
+    cursor: pointer;
+}
+
+.remu:hover::before {
+    content: "";
+    display: inline-block;
+    background: url("../../images/re0/remu002.png") no-repeat;
+    width: 80px;
+    height: 60px;
+    background-size: 100% 100%;
+    transition: width 0.8s,height 0.8s, -webkit-transform 0.8s; /* Safari 和 Chrome */
+}
+
+.ramu {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+}
+.ramu::before {
+    content: "";
+    display: inline-block;
+    background: url("../../images/re0/ramu001.png")  no-repeat;
+    width: 75px;
+    height: 75px;
+    background-size: 100% 100%;
+}
+
+.ramu:hover {
+    cursor: pointer;
+}
+
+.ramu:hover::before {
+    content: "";
+    display: inline-block;
+    background: url("../../images/re0/ramu002.png")  no-repeat;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+    transition: width 0.8s,height 0.8s, -webkit-transform 0.8s; /* Safari 和 Chrome */
+}

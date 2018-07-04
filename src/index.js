@@ -17,7 +17,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
     <div >
         <H>
-            <div className="index">
+            <div>
                 <R exact path="/" component={Main}/>
                 <R exact path="/register" component={Register}/>
                 <R path="/resume" component={Resume}/>

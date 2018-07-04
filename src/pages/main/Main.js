@@ -3,20 +3,25 @@ import m from "./main.css"
 import { Tooltip } from 'antd';
 import { Timeline, Icon } from 'antd';
 import { Progress } from 'antd';
+import FocusHeadOrFoot from '../focusHeadOrFoot/FocusHeadOrFoot'
 let initInfoMap = new Map();
 initInfoMap.set("name", "Carney")
     .set("phone","1888888888")
     .set("email","111111111@gmail.com")
+    .set("level","大学本科")
     .set("university","GuangXi University")
     .set("major", "计算机学院网络工程")
+    .set("salary","100K+")
     .set("address","广西南宁市西乡塘区大学路");
 
 function MyInformation(p) {
     return (<div className={m.personMess}>
         <div className={m.phone} data={p.phone}/>
         <div className={m.email} data={p.email}/>
+        <div className={m.level} data={p.level}/>
         <div className={m.university} data={p.university}/>
         <div className={m.major} data={p.major}/>
+        <div className={m.salary} data={p.salary}/>
         <div className={m.address} data={p.address}/>
     </div>);
 }
@@ -24,24 +29,24 @@ function MyInformation(p) {
 function MySkill(p) {
     const label = (<div className={m.skillProgress}>
         {p.skills.map((skill) =>
-                <Tooltip key={skill.key} placement={`right`} title={skill.title}>
-                    <div className={
-                        skill.name === 'java' ? m.myJava :
-                            skill.name === 'linux' ? m.myLinux :
-                                skill.name === 'oracle' ? m.myOracle :
-                                    skill.name === 'react' ? m.myReact :
-                                        skill.name === 'mysql' ? m.mySql :
-                                            skill.name === 'vue' ? m.myVue :
-                                                skill.name === 'javaScript' ? m.myJavaScript :
-                                                    skill.name === 'css' ? m.myCss :
-                                                        skill.name === 'jquery' ? m.myJquery : ``}>
-                        <Progress key={skill.key} percent={skill.value} size="small"
-                                  showInfo={false}
-                                  status = {skill.value >= 75 ?`success`:skill.value <= 50 ? `exception`:
-                                      skill.value < 75&& skill.value > 60?`active`:`normal`}
-                                  />
-                    </div>
-                </Tooltip>)}
+            <Tooltip key={skill.key} placement={`right`} title={skill.title}>
+                <div className={
+                    skill.name === 'java' ? m.myJava :
+                        skill.name === 'linux' ? m.myLinux :
+                            skill.name === 'oracle' ? m.myOracle :
+                                skill.name === 'react' ? m.myReact :
+                                    skill.name === 'mysql' ? m.mySql :
+                                        skill.name === 'vue' ? m.myVue :
+                                            skill.name === 'javaScript' ? m.myJavaScript :
+                                                skill.name === 'css' ? m.myCss :
+                                                    skill.name === 'jquery' ? m.myJquery : ``}>
+                    <Progress key={skill.key} percent={skill.value} size="small"
+                              showInfo={false}
+                              status={skill.value >= 75 ? `success` : skill.value <= 50 ? `exception` :
+                                  skill.value < 75 && skill.value > 60 ? `active` : `normal`}
+                    />
+                </div>
+            </Tooltip>)}
     </div>);
 
     return label;
@@ -49,7 +54,7 @@ function MySkill(p) {
 
 function MyWork() {
     return (<div className={m.myWorkDetail}>
-        <div className={m.workExp}><div/></div>
+        <div className={m.workExp}/>
         <div className={m.workTimeLine}>
             <Timeline>
                 <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />} color="red">2014.01.01-2015.06.07</Timeline.Item>
@@ -65,14 +70,14 @@ function MyWork() {
 
 function MyProject() {
     return (<div className={m.projectDetail}>
-        <div className={m.projectExp}><div/></div>
+        <div className={m.projectExp}/>
         <div className={m.workTimeLine}>
             <Timeline>
-                <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />} color="red">2014.01.01-2015.06.07</Timeline.Item>
-                <Timeline.Item>I</Timeline.Item>
-                <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} color="pink"/>}>2015.07.01-2016.12.31</Timeline.Item>
-                <Timeline.Item>am</Timeline.Item>
-                <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}>2017.01.01-2018.12.31</Timeline.Item>
+                <Timeline.Item color="red">JavaEE项目</Timeline.Item>
+                <Timeline.Item color={`black`}>JavaEEWeb</Timeline.Item>
+                <Timeline.Item color="pink">React项目</Timeline.Item>
+                <Timeline.Item color={`grey`}>am</Timeline.Item>
+                <Timeline.Item color="green">2017.01.01-2018.12.31</Timeline.Item>
                 <Timeline.Item>02</Timeline.Item>
             </Timeline>
         </div>
@@ -87,6 +92,8 @@ export default class Main extends Component {
                 phone: "",
                 email: "",
                 university: "",
+                level :"",
+                salary : "",
                 major: "",
                 address: "",
                 currentState : "",
@@ -150,8 +157,10 @@ export default class Main extends Component {
         const info = {
             phone: this.state.phone,
             email: this.state.email,
+            level:this.state.level,
             university: this.state.university,
             major: this.state.major,
+            salary : this.state.salary,
             address: this.state.address
         }
 
@@ -175,6 +184,7 @@ export default class Main extends Component {
                 {/*这是个人项目*/}
                 <MyProject/>
             </div>
+            <FocusHeadOrFoot/>
         </div>)
     }
 }
