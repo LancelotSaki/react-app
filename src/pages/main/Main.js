@@ -16,40 +16,40 @@ initInfoMap.set("name", "Carney")
 
 function MyInformation(p) {
     return (<div className={m.personMess}>
-        <div className={m.phone} data={p.phone}/>
-        <div className={m.email} data={p.email}/>
-        <div className={m.level} data={p.level}/>
-        <div className={m.university} data={p.university}/>
-        <div className={m.major} data={p.major}/>
-        <div className={m.salary} data={p.salary}/>
-        <div className={m.address} data={p.address}/>
+        <div className={m.phone} data-str={p.phone}/>
+        <div className={m.email} data-str={p.email}/>
+        <div className={m.level} data-str={p.level}/>
+        <div className={m.university} data-str={p.university}/>
+        <div className={m.major} data-str={p.major}/>
+        <div className={m.salary} data-str={p.salary}/>
+        <div className={m.address} data-str={p.address}/>
     </div>);
 }
 
 function MySkill(p) {
-    const label = (<div className={m.skillProgress}>
+    return (<div className={m.skillProgress}>
         {p.skills.map((skill) =>
-            <Tooltip key={skill.key} placement={`right`} title={skill.title}>
-                <div className={
-                    skill.name === 'java' ? m.myJava :
-                        skill.name === 'linux' ? m.myLinux :
-                            skill.name === 'oracle' ? m.myOracle :
-                                skill.name === 'react' ? m.myReact :
-                                    skill.name === 'mysql' ? m.mySql :
-                                        skill.name === 'vue' ? m.myVue :
-                                            skill.name === 'javaScript' ? m.myJavaScript :
-                                                skill.name === 'css' ? m.myCss :
-                                                    skill.name === 'jquery' ? m.myJquery : ``}>
-                    <Progress key={skill.key} percent={skill.value} size="small"
-                              showInfo={false}
-                              status={skill.value >= 75 ? `success` : skill.value <= 50 ? `exception` :
-                                  skill.value < 75 && skill.value > 60 ? `active` : `normal`}
-                    />
-                </div>
-            </Tooltip>)}
-    </div>);
+                        <Tooltip key={skill.key} placement={`right`} title={skill.title}>
+                            <div className={
+                                skill.name === 'java' ? m.myJava :
+                                    skill.name === 'linux' ? m.myLinux :
+                                        skill.name === 'oracle' ? m.myOracle :
+                                            skill.name === 'react' ? m.myReact :
+                                                skill.name === 'mysql' ? m.mySql :
+                                                    skill.name === 'vue' ? m.myVue :
+                                                        skill.name === 'javaScript' ? m.myJavaScript :
+                                                            skill.name === 'css' ? m.myCss :
+                                                                skill.name === 'jquery' ? m.myJquery : ``}>
+                                <Progress key={skill.key} percent={skill.value} size="small"
+                                          showInfo={false}
+                                          status={skill.value >= 75 ? `success` : skill.value <= 50 ? `exception` :
+                                              skill.value < 75 && skill.value > 60 ? `active` : `normal`}
+                                />
+                            </div>
+                        </Tooltip>
 
-    return label;
+            )}
+    </div>);
 }
 
 function MyWork() {
@@ -85,8 +85,8 @@ function MyProject() {
 }
 
 export default class Main extends Component {
-    constructor(pro){
-       super(pro)
+    constructor(props){
+       super(props);
         this.state = {
                 name : "",
                 phone: "",
@@ -174,7 +174,7 @@ export default class Main extends Component {
             <div className={m.myPanel}>
                 {/*这是头像*/}
                 <div className={m.headPhotoCircle}/>
-                <div className={m.showMyName} data={this.state.name}/>
+                <div className={m.showMyName} data-str={this.state.name}/>
                  {/*个人信息*/}
                 <MyInformation {...info}/>
                 {/*我的技能*/}

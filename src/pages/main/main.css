@@ -168,7 +168,7 @@
     color: white;
 }
 .showMyName::after {
-    content: attr(data);
+    content: attr(data-str);
     display: inline-block;
 }
 
@@ -210,7 +210,7 @@
 
 
 .phone::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/phone.svg") no-repeat  0 4px;
@@ -224,7 +224,7 @@
 
 
 .university::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/school.svg") no-repeat  0 4px;
@@ -238,7 +238,7 @@
 
 
 .major::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/profession.svg") no-repeat 0 4px;
@@ -251,7 +251,7 @@
 }
 
 .email::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/email.svg") no-repeat  0 4px;
@@ -264,7 +264,7 @@
 }
 
 .level::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/stuExp.svg") no-repeat  0 4px;
@@ -278,7 +278,7 @@
 
 
 .salary::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/salary.svg") no-repeat  0 4px;
@@ -292,7 +292,7 @@
 
 
 .address::before {
-    content: attr(data);
+    content: attr(data-str);
     width: 240px;
     height: 35px;
     background: url("../../images/svg/address.svg") no-repeat 0 4px;
