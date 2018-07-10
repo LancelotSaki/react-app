@@ -58,7 +58,6 @@
     text-align: center;
     background: rgba(1,2,6,0.85);
     clip-path: polygon(5px 5px,650px 5px,100% 150px,260px 150px,260px 100%, 10px 100%,10px 150px, 5px 150px);
-    z-index: 8;
     background: url("../../images/star.png");
     background-size: 100% 100%;
 }
@@ -73,7 +72,7 @@
     top: -33px;
     background: url("../../images/svg/crown.svg") no-repeat;
     background-size: 50px 30px;
-    clip-path: polygon(0% 8%, 25% 35%, 50% 0%, 75% 35%, 100% 8%, 88% 100%, 12% 100%);
+    /*clip-path: polygon(0% 8%, 25% 35%, 50% 0%, 75% 35%, 100% 8%, 88% 100%, 12% 100%);*/
 }
 
 .headPhotoCircle {
@@ -150,9 +149,6 @@
     0% {
         transform: rotateY(0deg);
     }
-    50%{
-        transform: rotateY(180deg);
-    }
     100% {
         transform: rotateY(360deg);
     }
@@ -177,32 +173,33 @@
     height: 250px;
     width: 240px;
     left: 15px;
-    top: 200px;
+    top: 275px;
 }
 
 .personMess::before {
     content: "个人信息";
-    width: 120px;
-    height: 22px;
-    background: url("../../images/svg/personMessage.svg") no-repeat;
+    width: 200px;
+    height: 35px;
+    background: url("../../images/svg/personMessage.svg") no-repeat 20px 10px;
     background-size: 22px 22px;
     display: inline-block;
-    position: relative;
-    top: -10px;
-    left: -60px;
+    position: absolute;
+    left: 17px;
+    top: -45px;
     color: white;
-    padding-left: 5px;
+    margin-left: -35px;
+    font-size: 1.5rem;
 }
 
 .personMess::after {
     content: "";
-    width: 200px;
+    width: 190px;
     height: 1px;
-    background-color: #ff9999;
+    border-bottom: 2px dashed #ff9999;
     display: inline-block;
-    top: 15px;
+    top: -5px;
     position: absolute;
-    left: 25px;
+    left: 35px;
 }
 .phone, .university, .major, .email, .address,.level,.salary{
     height: 35px;
@@ -315,27 +312,29 @@
 
 .skillProgress::before {
     content: "个人技能";
-    width: 100px;
-    height: 22px;
-    display: inline-block;
-    left: 0;
-    top: -30px;
-    position: absolute;
-    background: url("../../images/svg/skill.svg") no-repeat;
+    width: 200px;
+    height: 35px;
+    background: url("../../images/svg/skill.svg") no-repeat 20px 10px;
     background-size: 22px 22px;
+    display: inline-block;
+    position: absolute;
+    left: 17px;
+    top: -45px;
     color: white;
-    padding-left: 20px;
+    margin-left: -35px;
+    font-size: 1.5rem;
+    padding-left: 55px;
 }
 
 .skillProgress::after {
     content: "";
     display: inline-block;
-    width: 200px;
+    width: 190px;
     height: 1px;
-    background-color: #ff9999;
+    border-bottom: 2px dashed #ff9999;
     position: absolute;
     top: -5px;
-    left: 25px;
+    left: 35px;
 }
 
 
@@ -450,23 +449,15 @@
 
 /*右下角信息*/
 
-.workTimeLine {
-    position: absolute;
-    left: 15px;
-    top: 45px;
-    text-align: left;
-}
-
 .myWorkDetail {
     position: absolute;
     left: 265px;
     top: 155px;
     width: 525px;
     height: 280px;
-    border-radius: 5px;
 /*    background: #BDCFE4;*/
     animation: opacityFromZeroToOne 1.5s linear;
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -482,29 +473,26 @@
 }
 
 .workExp {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 22px;
-    height: 22px;
-    background: url("../../images/svg/jobExp.svg") ;
-    background-size: contain;
+    margin-top: 50px;
+    margin-left: 25px;
+    text-align: left;
 }
 
 
 .workExp::before {
     content: "项目经历";
     display: inline-block;
-    width: 120px;
+    width: 200px;
     height: 30px;
     /*clip-path: polygon(0 0, 85% 0, 100% 20px, 0 20px);*/
     position: absolute;
     top: 5px;
-    left: 25px;
-    /*color: white;*/
-    padding-left: 5px;
-    text-align: left;
+    left: 5px;
+    padding-left: 30px;
     line-height: 20px;
+    background: url("../../images/svg/jobExp.svg") no-repeat;
+    background-size: 22px 22px;
+    font-size: 1.5rem;
 }
 /*水平分割直线*/
 .workExp::after {
@@ -512,51 +500,46 @@
     display: inline-block;
     width: 450px;
     height: 1px;
-    background-color: #ff9999;
+    border-bottom: 2px dashed #ff9999;
     position: absolute;
-    top: 30px;
-    left: 25px;
+    left: 35px;
+    top: 35px;
 }
 
 .projectDetail {
     position: absolute;
-/*    background: lightgreen;*/
     left: 265px;
     top: 455px;
     width: 525px;
     height: 280px;
     border-radius: 5px;
     animation: opacityFromZeroToOne 1.5s linear;
-    animation-delay: 4s;
+    animation-delay: 3s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
 
 
 .projectExp {
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    background-image: url("../../images/svg/workExp.svg");
-    background-size: contain;
-    width: 22px;
-    height: 22px;
-    margin-right: 5px;
+    margin-top: 50px;
+    margin-left: 25px;
+    text-align: left;
 }
 
 
 .projectExp::before {
     content: "个人项目";
     display: inline-block;
-    width: 120px;
+    width: 200px;
     height: 20px;
-    /*clip-path: polygon(0 0, 85% 0, 100% 20px, 0 20px);*/
     position: absolute;
     top: 5px;
-    left: 25px;
-    padding-left: 5px;
-    text-align: left;
+    left: 5px;
+    padding-left: 30px;
     line-height: 20px;
+    background: url("../../images/svg/workExp.svg") no-repeat;
+    background-size: 22px 22px;
+    font-size: 1.5rem;
 }
 /*水平分割直线*/
 .projectExp::after {
@@ -564,8 +547,56 @@
     display : inline-block;
     width: 450px;
     height: 1px;
-    background: #ff9999;
+    border-bottom: 2px dashed #ff9999;
     position: absolute;
-    left: 20px;
-    top: 28px;
+    left: 35px;
+    top: 35px;
+}
+
+.evaluateDetail {
+    position: absolute;
+    left: 265px;
+    top: 755px;
+    width: 525px;
+    height: 280px;
+    border-radius: 5px;
+    animation: opacityFromZeroToOne 1.5s linear;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+.evaluateExp {
+    margin-top: 50px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+
+.evaluateExp::before {
+    content: "个人评价";
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    /*clip-path: polygon(0 0, 85% 0, 100% 20px, 0 20px);*/
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding-left: 30px;
+    line-height: 20px;
+    background: url("../../images/svg/evaluate.svg") no-repeat;
+    background-size: 22px 22px;
+    font-size: 1.5rem;
+}
+/*水平分割直线*/
+.evaluateExp::after {
+    content: "";
+    display : inline-block;
+    width: 450px;
+    height: 1px;
+    border-bottom: 2px dashed #ff9999;
+    position: absolute;
+    left: 35px;
+    top: 35px;
 }

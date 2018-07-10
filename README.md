@@ -1,6 +1,19 @@
 ### react-app
-由于工程使用create-react-app快速开发的方式
-需要安装node.js(安装步骤略)
+
+#### 前言
+
+本项目里使用了大量的ES6+的语法，之前还在使用原来ES5-的方式来写js代码的童鞋，
+请花个一两个钟头去熟悉了解一下--[相关资料](http://es6.ruanyifeng.com/)。
+主要常用的有class(类似于java的声明对象)、模板字符串、let、const、Promise()异步调用、module、map遍历以及async/await。
+另外本项目中的页面为了减少js页面的复杂度和代码量很多样式都使用了大量的::before和::after元素(由css分担一部分),
+不怎么熟悉css的童鞋可以把他们当作额外的div看待(可以略过，直接使用antd前端ui框架开发即可)。
+剩下的基本就是react的基础功能了，如:state、常量组件(元素渲染)、函数组件(必须大写开头)、列表、Fragment新标签(替换掉原来外层包裹的div)等等。
+了解以上这些基础的东西后，就可以开始快速开发了。
+
+---
+
+由于工程使用create-react-app + css module + css in js + antd + router快速开发,因而需要做一些相关准备。
+- 安装node.js(安装步骤略)
 - 安装create-react-app插件
 ```
 cnpm install -g create-react-app
